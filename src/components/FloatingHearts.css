@@ -1,0 +1,40 @@
+.floating-petals {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    bottom: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold-soft), var(--rose-blush));
+    will-change: transform, opacity;
+    animation: drift-up linear infinite;
+}
+
+@keyframes drift-up {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: var(--opacity, 0.08);
+    }
+
+    50% {
+        transform: translateY(-50vh) translateX(20px) scale(0.8);
+    }
+
+    92% {
+        opacity: var(--opacity, 0.08);
+    }
+
+    100% {
+        transform: translateY(-105vh) translateX(-15px) scale(0.6);
+        opacity: 0;
+    }
+}

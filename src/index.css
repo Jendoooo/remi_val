@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&family=Great+Vibes&display=swap');
+
+:root {
+  --champagne: #f5e6d3;
+  --rose-blush: #d4a0a0;
+  --deep-wine: #722f37;
+  --burgundy: #4a1a2e;
+  --midnight: #1a0a14;
+  --warm-black: #0d0608;
+  --cream: #faf3eb;
+  --gold-soft: #c9a96e;
+  --gold-bright: #d4af37;
+  --petal: #e8c4c4;
+  --white: #ffffff;
+  --white-soft: rgba(255, 255, 255, 0.85);
+
+  --font-display: 'Great Vibes', cursive;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Outfit', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--warm-black);
+  color: var(--cream);
+}
+
+::selection {
+  background: var(--rose-blush);
+  color: var(--warm-black);
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
