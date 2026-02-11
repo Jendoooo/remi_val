@@ -90,7 +90,7 @@ export default function CelebrationSection() {
                     <div className="cel-date-line" />
                     <div className="cel-date-with">
                         <span className="cel-with-label">with</span>
-                        <span className="cel-with-name">Mr. Remilekun</span>
+                        <span className="cel-with-name">Mr. Remilekun Ayeola</span>
                     </div>
                     <p className="cel-date-note">
                         Time and date would be communicated

@@ -5,12 +5,16 @@ import './ProposalSection.css';
 
 const NO_REACTIONS = [
     "No",
-    "Are you sure?",
-    "Really really sure?",
-    "Okay think about it…",
-    "Fine, I'll wait…",
+    "Ṣé o serious ni?",
+    "Kí ló dé now?",
+    "Ẹ̀hẹ̀n, try again",
+    "Ẹjẹ́burẹ́ àwọ olùbẹ̀gbẹ́ 😂",
+    "Ó dà bí pé…",
+    "Ẹ̀yin ọmọ yìí o",
+    "Ọmọ, say yes nau",
+    "I no go gree o",
     "…you sure though?",
-    "Just say yes already",
+    "Okay last chance",
 ];
 
 export default function ProposalSection({ onYes }) {
@@ -23,11 +27,12 @@ export default function ProposalSection({ onYes }) {
             onYes();
             return;
         }
-        const x = (Math.random() - 0.5) * 180;
-        const y = (Math.random() - 0.5) * 100;
+        // Keep NO button below and to the side of YES — never overlapping
+        const x = (Math.random() > 0.5 ? 1 : -1) * (60 + Math.random() * 100);
+        const y = 20 + Math.random() * 60;
         setNoPos({ x, y });
         setNoCount((c) => c + 1);
-        setYesGrow((g) => Math.min(g + 0.1, 1.5));
+        setYesGrow((g) => Math.min(g + 0.08, 1.6));
     }, [noCount, onYes]);
 
     const handleNoTouch = useCallback(
@@ -161,14 +166,16 @@ export default function ProposalSection({ onYes }) {
                     </motion.button>
 
                     <motion.button
-                        className={`btn-no ${noCount > 3 ? 'btn-no--fading' : ''}`}
+                        className={`btn-no ${noCount > 5 ? 'btn-no--fading' : ''}`}
                         onClick={handleNoTouch}
-                        onMouseEnter={noCount >= 3 ? dodgeNo : undefined}
+                        onMouseEnter={noCount >= 4 ? dodgeNo : undefined}
                         onTouchStart={handleNoTouch}
+                        style={{ position: 'relative', zIndex: 1 }}
                         animate={{
                             x: noPos.x,
                             y: noPos.y,
-                            scale: Math.max(1 - noCount * 0.08, 0.55),
+                            scale: Math.max(1 - noCount * 0.06, 0.45),
+                            opacity: Math.max(1 - noCount * 0.06, 0.35),
                         }}
                         transition={{ type: 'spring', stiffness: 400, damping: 18 }}
                     >
@@ -176,7 +183,7 @@ export default function ProposalSection({ onYes }) {
                     </motion.button>
                 </motion.div>
 
-                {noCount >= 3 && (
+                {noCount >= 4 && (
                     <motion.p
                         className="nudge"
                         initial={{ opacity: 0 }}
