@@ -84,7 +84,7 @@ export default function CelebrationSection() {
                             rel="noopener noreferrer"
                             className="cel-venue-map-link"
                         >
-                            View on Maps ↗
+                            View on Maps
                         </a>
                     </div>
                     <div className="cel-date-line" />

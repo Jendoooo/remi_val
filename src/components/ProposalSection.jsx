@@ -72,7 +72,7 @@ export default function ProposalSection({ onYes }) {
                             <img src="/photos/tofunmi-4.jpg" alt="" className="letter-photo" />
                         </motion.div>
                         <motion.div className="letter-photo-wrap" {...fade(0.8)}>
-                            <img src="/photos/tofunmi-5.jpg" alt="" className="letter-photo" />
+                            <img src="/photos/tofunmi-3.jpg" alt="" className="letter-photo" />
                         </motion.div>
                     </div>
 
@@ -111,7 +111,7 @@ export default function ProposalSection({ onYes }) {
                     {/* Second photo row — glam shots */}
                     <motion.div className="letter-photos" {...fade(3.0)}>
                         <div className="letter-photo-wrap">
-                            <img src="/photos/tofunmi-3.jpg" alt="" className="letter-photo" />
+                            <img src="/photos/tofunmi-5.jpg" alt="" className="letter-photo" />
                         </div>
                         <div className="letter-photo-wrap">
                             <img src="/photos/tofunmi-2.jpg" alt="" className="letter-photo" />
@@ -174,8 +174,8 @@ export default function ProposalSection({ onYes }) {
                         animate={{
                             x: noPos.x,
                             y: noPos.y,
-                            scale: Math.max(1 - noCount * 0.06, 0.45),
-                            opacity: Math.max(1 - noCount * 0.06, 0.35),
+                            scale: Math.max(1 - noCount * 0.04, 0.7),
+                            opacity: Math.max(1 - noCount * 0.04, 0.5),
                         }}
                         transition={{ type: 'spring', stiffness: 400, damping: 18 }}
                     >

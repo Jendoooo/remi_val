@@ -69,8 +69,13 @@
     position: relative;
     overflow: hidden;
     border-radius: 2px;
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.02);
     aspect-ratio: 9 / 12;
     max-height: 320px;
+    max-width: 280px;
+    margin: 6px auto;
 }
 
 .letter-video {
@@ -207,8 +212,8 @@
 }
 
 .btn-no--fading {
-    font-size: 11px;
-    padding: 8px 18px;
+    font-size: 12px;
+    padding: 10px 20px;
 }
 
 .nudge {
