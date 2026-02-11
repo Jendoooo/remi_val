@@ -78,6 +78,14 @@ export default function CelebrationSection() {
                     <div className="cel-date-venue">
                         <span className="cel-venue-at">at</span>
                         <h2 className="cel-venue-name">Bricks Restaurant</h2>
+                        <a
+                            href="https://maps.google.com/maps?daddr=Brisk&dirflg=d"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="cel-venue-map-link"
+                        >
+                            View on Maps ↗
+                        </a>
                     </div>
                     <div className="cel-date-line" />
                     <div className="cel-date-with">
@@ -101,7 +109,7 @@ export default function CelebrationSection() {
                     </p>
                     <div className="cel-sig">
                         <span className="cel-sig-line" />
-                        <span className="cel-sig-name">Olúwarẹ̀mílẹ́kún</span>
+                        <span className="cel-sig-name">Remilekun</span>
                         <span className="cel-sig-line" />
                     </div>
                 </motion.div>

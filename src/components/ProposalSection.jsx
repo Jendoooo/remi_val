@@ -140,8 +140,7 @@ export default function ProposalSection({ onYes }) {
                     transition={{ delay: 4.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 >
                     <h2 className="question-text">Will you be my Valentine?</h2>
-                    <span className="question-sig">— Olúwarẹ̀mílẹ́kún</span>
-                    <span className="question-sig-meaning">God consoled me</span>
+                    <span className="question-sig">— Remilekun</span>
                 </motion.div>
 
                 {/* Buttons */}

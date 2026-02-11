@@ -110,6 +110,26 @@
     letter-spacing: 1px;
 }
 
+.cel-venue-map-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    opacity: 0.5;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.25);
+    padding-bottom: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.cel-venue-map-link:hover {
+    opacity: 0.85;
+}
+
 .cel-date-with {
     display: flex;
     flex-direction: column;
