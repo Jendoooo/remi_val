@@ -97,6 +97,22 @@
     letter-spacing: 1px;
 }
 
+/* ── video pair ── */
+.letter-videos-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 6px 0;
+}
+
+.letter-video-wrap--small {
+    max-width: none;
+    max-height: 240px;
+    margin: 0;
+    padding: 4px;
+    aspect-ratio: 3 / 4;
+}
+
 /* ── text ── */
 .letter-text {
     font-family: var(--font-serif);

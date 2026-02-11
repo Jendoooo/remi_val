@@ -108,8 +108,34 @@ export default function ProposalSection({ onYes }) {
                         presence, your calm, and your heart. I won't forget that.
                     </motion.p>
 
+                    {/* Video pair — salon & feeding */}
+                    <motion.div className="letter-videos-pair" {...fade(2.9)}>
+                        <div className="letter-video-wrap letter-video-wrap--small">
+                            <video
+                                className="letter-video"
+                                src="/photos/salon-playful.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                            />
+                            <span className="video-caption">at the salon</span>
+                        </div>
+                        <div className="letter-video-wrap letter-video-wrap--small">
+                            <video
+                                className="letter-video"
+                                src="/photos/feeding-icecream.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                            />
+                            <span className="video-caption">you & ice cream</span>
+                        </div>
+                    </motion.div>
+
                     {/* Second photo row — glam shots */}
-                    <motion.div className="letter-photos" {...fade(3.0)}>
+                    <motion.div className="letter-photos" {...fade(3.3)}>
                         <div className="letter-photo-wrap">
                             <img src="/photos/tofunmi-5.jpg" alt="" className="letter-photo" />
                         </div>
