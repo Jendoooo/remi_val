@@ -21,10 +21,13 @@ export default function ProposalSection({ onYes }) {
     const [noCount, setNoCount] = useState(0);
     const [noPos, setNoPos] = useState({ x: 0, y: 0 });
     const [yesGrow, setYesGrow] = useState(1);
+    const [noGone, setNoGone] = useState(false);
 
     const dodgeNo = useCallback(() => {
         if (noCount >= NO_REACTIONS.length - 1) {
-            onYes();
+            // Last click — NO disappears entirely
+            setNoGone(true);
+            setYesGrow(1.6);
             return;
         }
         // Keep NO button below and to the side of YES — never overlapping
@@ -191,31 +194,44 @@ export default function ProposalSection({ onYes }) {
                         Yes
                     </motion.button>
 
-                    <motion.button
-                        className={`btn-no ${noCount > 5 ? 'btn-no--fading' : ''}`}
-                        onClick={handleNoTouch}
-                        onMouseEnter={noCount >= 4 ? dodgeNo : undefined}
-                        onTouchStart={handleNoTouch}
-                        style={{ position: 'relative', zIndex: 1 }}
-                        animate={{
-                            x: noPos.x,
-                            y: noPos.y,
-                            scale: Math.max(1 - noCount * 0.04, 0.7),
-                            opacity: Math.max(1 - noCount * 0.04, 0.5),
-                        }}
-                        transition={{ type: 'spring', stiffness: 400, damping: 18 }}
-                    >
-                        {NO_REACTIONS[Math.min(noCount, NO_REACTIONS.length - 1)]}
-                    </motion.button>
+                    {!noGone && (
+                        <motion.button
+                            className={`btn-no ${noCount > 5 ? 'btn-no--fading' : ''}`}
+                            onClick={handleNoTouch}
+                            onMouseEnter={noCount >= 4 ? dodgeNo : undefined}
+                            onTouchStart={handleNoTouch}
+                            style={{ position: 'relative', zIndex: 1 }}
+                            animate={{
+                                x: noPos.x,
+                                y: noPos.y,
+                                scale: Math.max(1 - noCount * 0.04, 0.7),
+                                opacity: Math.max(1 - noCount * 0.04, 0.5),
+                            }}
+                            transition={{ type: 'spring', stiffness: 400, damping: 18 }}
+                        >
+                            {NO_REACTIONS[Math.min(noCount, NO_REACTIONS.length - 1)]}
+                        </motion.button>
+                    )}
                 </motion.div>
 
-                {noCount >= 4 && (
+                {noCount >= 4 && !noGone && (
                     <motion.p
                         className="nudge"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 0.5 }}
                     >
                         come on, you know the answer
+                    </motion.p>
+                )}
+
+                {noGone && (
+                    <motion.p
+                        className="nudge nudge--ghen"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ type: 'spring', stiffness: 200 }}
+                    >
+                        ghen ghen 😂 only YES remains o
                     </motion.p>
                 )}
             </div>
